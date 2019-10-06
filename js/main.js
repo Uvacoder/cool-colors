@@ -42,9 +42,26 @@ applyColorsOnCards = colorsArray => {
 getColor = e => {
   const color = e.target.style.backgroundColor;
   colorvalue.style.display = "block";
-  colorvalue.value = color;
+  colorvalue.value = convertToHex(color);
   colorvalue.select();
   document.execCommand("copy");
   colorvalue.style.display = "none";
   M.toast({ html: "Color Copied Successfully!" });
+};
+
+convertToHex = color => {
+  let rgbArray = color.substring(4, color.length - 1).split(", ");
+  let r = Number(rgbArray[0]).toString(16);
+  let g = Number(rgbArray[1]).toString(16);
+  let b = Number(rgbArray[2]).toString(16);
+  if (r.length == 1) {
+    r = `0${r}`;
+  }
+  if (g.length == 1) {
+    g = `0${g}`;
+  }
+  if (b.length == 1) {
+    b = `0${b}`;
+  }
+  return `#${r}${g}${b}`;
 };
