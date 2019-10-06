@@ -35,3 +35,7 @@ body {
 #hint {
   margin-right: 16px;
 }
+
+#colorvalue {
+  display: none;
+}
