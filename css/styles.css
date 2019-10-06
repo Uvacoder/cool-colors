@@ -1,0 +1,23 @@
+body {
+}
+
+.card-panel {
+  height: 250px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card-panel:hover {
+  transform: scale(1.1);
+}
+
+.logo,
+.legend {
+  user-select: none;
+}
+
+.lock-icon {
+  position: absolute;
+  margin: 16px 0 0 60px;
+  display: none;
+}
