@@ -51,17 +51,17 @@ getColor = e => {
 
 convertToHex = color => {
   let rgbArray = color.substring(4, color.length - 1).split(", ");
-  let r = Number(rgbArray[0]).toString(16);
-  let g = Number(rgbArray[1]).toString(16);
-  let b = Number(rgbArray[2]).toString(16);
-  if (r.length == 1) {
-    r = `0${r}`;
+  let red = Number(rgbArray[0]).toString(16);
+  let green = Number(rgbArray[1]).toString(16);
+  let blue = Number(rgbArray[2]).toString(16);
+  if (red.length == 1) {
+    red = `0${red}`;
   }
-  if (g.length == 1) {
-    g = `0${g}`;
+  if (green.length == 1) {
+    green = `0${green}`;
   }
-  if (b.length == 1) {
-    b = `0${b}`;
+  if (blue.length == 1) {
+    blue = `0${blue}`;
   }
-  return `#${r}${g}${b}`;
+  return `#${red}${green}${blue}`;
 };
