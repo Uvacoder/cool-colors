@@ -3,6 +3,7 @@ const cardTwo = document.querySelector("#card2");
 const cardThree = document.querySelector("#card3");
 const cardFour = document.querySelector("#card4");
 const cards = document.querySelectorAll(".card-panel");
+const colorvalue = document.querySelector("#colorvalue");
 
 cards.forEach(card => {
   card.addEventListener("click", e => {
@@ -39,5 +40,11 @@ applyColorsOnCards = colorsArray => {
 };
 
 getColor = e => {
-  console.log(e.target.style.backgroundColor);
+  const color = e.target.style.backgroundColor;
+  colorvalue.style.display = "block";
+  colorvalue.value = color;
+  colorvalue.select();
+  document.execCommand("copy");
+  colorvalue.style.display = "none";
+  M.toast({ html: "Color Copied Successfully!" });
 };
